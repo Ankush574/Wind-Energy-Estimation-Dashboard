@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculator - Wind Energy Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+</head>
+<body>
+  <header>
+    <nav class="nav-container">
+      <div class="nav-brand">
+        <h1>🌬️ Wind Energy Dashboard</h1>
+      </div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="calculator.html" class="active">Calculator</a></li>
+        <li><a href="graphs.html">Graphs</a></li>
+        <li><a href="info.html">Info</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+      <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme">
+        <span class="theme-icon">🌙</span>
+      </button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="calculator-section">
+      <div class="container">
+        <h2>Wind Power Calculator</h2>
+        <p class="subtitle">Calculate wind power using: P = 0.5 × ρ × A × V³ × Cp (where A = πr²)</p>
+
+        <div class="calculator-card">
+          <form id="calculatorForm" class="calculator-form">
+            <div class="form-group">
+              <label for="windSpeed">Wind Speed (m/s)</label>
+              <input type="number" id="windSpeed" name="windSpeed" 
+                     step="0.1" min="0" max="100" required 
+                     placeholder="Enter wind speed">
+              <small class="form-help">Typical range: 3-25 m/s</small>
+            </div>
+
+            <div class="form-group">
+              <label for="bladeRadius">Blade Radius (m)</label>
+              <input type="number" id="bladeRadius" name="bladeRadius" 
+                     step="0.1" min="0" max="200" required 
+                     placeholder="Enter blade radius">
+              <small class="form-help">Half of rotor diameter</small>
+            </div>
+
+            <div class="form-group">
+              <label for="airDensity">Air Density (kg/m³)</label>
+              <input type="number" id="airDensity" name="airDensity" 
+                     step="0.001" min="0.5" max="2" value="1.225" required>
+              <small class="form-help">Standard: 1.225 kg/m³ at sea level</small>
+            </div>
+
+            <div class="form-group">
+              <label for="powerCoefficient">Power Coefficient (Cp)</label>
+              <input type="number" id="powerCoefficient" name="powerCoefficient" 
+                     step="0.01" min="0" max="1" value="0.4" required>
+              <small class="form-help">Typical: 0.35-0.45 (Betz limit: 0.593)</small>
+            </div>
+
+            <div class="form-actions">
+              <button type="submit" class="btn btn-primary">Calculate</button>
+              <button type="button" id="resetBtn" class="btn btn-secondary">Reset</button>
+              <button type="button" id="printBtn" class="btn btn-secondary">Print / Save PDF</button>
+            </div>
+          </form>
+
+          <div id="resultsContainer" class="results-container" style="display: none;">
+            <h3>Results</h3>
+            <div class="results-grid">
+              <div class="result-card">
+                <div class="result-label">Power Output</div>
+                <div id="powerWatts" class="result-value">--</div>
+                <div class="result-unit">Watts</div>
+              </div>
+              <div class="result-card">
+                <div class="result-label">Power Output</div>
+                <div id="powerKW" class="result-value">--</div>
+                <div class="result-unit">Kilowatts</div>
+              </div>
+              <div class="result-card">
+                <div class="result-label">Swept Area</div>
+                <div id="sweptArea" class="result-value">--</div>
+                <div class="result-unit">m²</div>
+              </div>
+              <div class="result-card">
+                <div class="result-label">Efficiency</div>
+                <div id="efficiency" class="result-value">--</div>
+                <div class="result-unit">% of Betz limit</div>
+              </div>
+            </div>
+
+            <div class="chart-container-small">
+              <canvas id="powerChart"></canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2024 Wind Energy Estimation Dashboard. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
