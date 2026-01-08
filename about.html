@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About - Wind Energy Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+</head>
+<body>
+  <header>
+    <nav class="nav-container">
+      <div class="nav-brand">
+        <h1>🌬️ Wind Energy Dashboard</h1>
+      </div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="calculator.html">Calculator</a></li>
+        <li><a href="graphs.html">Graphs</a></li>
+        <li><a href="info.html">Info</a></li>
+        <li><a href="about.html" class="active">About</a></li>
+      </ul>
+      <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme">
+        <span class="theme-icon">🌙</span>
+      </button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="about-section">
+      <div class="container">
+        <h2>About This Project</h2>
+
+        <div class="about-card">
+          <h3>🎯 Project Overview</h3>
+          <p>
+            The Wind Energy Estimation Dashboard is a comprehensive web-based tool designed to help 
+            users calculate and visualize wind power potential. Built with modern web technologies, 
+            it provides accurate calculations based on established physics formulas and presents 
+            results through interactive visualizations.
+          </p>
+        </div>
+
+        <div class="about-card">
+          <h3>✨ Features</h3>
+          <ul class="features-list">
+            <li>
+              <strong>Accurate Calculations:</strong> Uses the standard wind power formula 
+              P = 0.5 × ρ × A × V³ × Cp with proper swept area calculation (A = πr²)
+            </li>
+            <li>
+              <strong>Input Validation:</strong> Smart form validation including Betz limit 
+              verification for power coefficient
+            </li>
+            <li>
+              <strong>Interactive Charts:</strong> Powered by Chart.js for responsive, 
+              animated visualizations
+            </li>
+            <li>
+              <strong>Power vs Wind Speed:</strong> Visual representation showing the cubic 
+              relationship between wind speed and power output
+            </li>
+            <li>
+              <strong>Efficiency Analysis:</strong> Color-coded efficiency ratings compared 
+              to the theoretical Betz limit
+            </li>
+            <li>
+              <strong>Dark/Light Theme:</strong> Toggle between themes with preference 
+              saved in browser
+            </li>
+            <li>
+              <strong>Responsive Design:</strong> Works seamlessly on desktop, tablet, 
+              and mobile devices
+            </li>
+            <li>
+              <strong>Print/Export:</strong> Save results as PDF using browser print 
+              functionality
+            </li>
+            <li>
+              <strong>Educational Content:</strong> Comprehensive information about wind 
+              energy principles
+            </li>
+          </ul>
+        </div>
+
+        <div class="about-card">
+          <h3>🛠️ Technologies Used</h3>
+          <div class="tech-grid">
+            <div class="tech-item">
+              <h4>HTML5</h4>
+              <p>Semantic markup for structure</p>
+            </div>
+            <div class="tech-item">
+              <h4>CSS3</h4>
+              <p>Modern styling with CSS variables and animations</p>
+            </div>
+            <div class="tech-item">
+              <h4>JavaScript (ES6+)</h4>
+              <p>Core logic and interactivity</p>
+            </div>
+            <div class="tech-item">
+              <h4>Chart.js</h4>
+              <p>Data visualization library</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="about-card">
+          <h3>📋 Pages</h3>
+          <div class="pages-list">
+            <div class="page-item">
+              <h4>🏠 Home</h4>
+              <p>Landing page with overview and quick navigation to key features</p>
+            </div>
+            <div class="page-item">
+              <h4>🧮 Calculator</h4>
+              <p>Interactive form for calculating wind power with real-time validation and results</p>
+            </div>
+            <div class="page-item">
+              <h4>📊 Graphs</h4>
+              <p>Large-format charts for detailed analysis of power output and efficiency</p>
+            </div>
+            <div class="page-item">
+              <h4>ℹ️ Info</h4>
+              <p>Educational content explaining wind energy concepts and formulas</p>
+            </div>
+            <div class="page-item">
+              <h4>👥 About</h4>
+              <p>Project information, features, and technical details</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="about-card">
+          <h3>🚀 Future Enhancements</h3>
+          <ul>
+            <li>Integration with live weather APIs for real-time wind data</li>
+            <li>Location-based default parameters (altitude, typical wind speeds)</li>
+            <li>Export calculations to CSV/Excel format</li>
+            <li>Historical data comparison and trends</li>
+            <li>Multiple turbine configuration comparison</li>
+            <li>Economic analysis (cost per kWh, ROI calculations)</li>
+            <li>Advanced visualizations (3D models, wind rose diagrams)</li>
+          </ul>
+        </div>
+
+        <div class="about-card">
+          <h3>👨‍💻 Developer</h3>
+          <p>
+            Developed by <strong>Ankush</strong> 🚀
+          </p>
+          <p>
+            This project demonstrates modern web development practices with a focus on 
+            clean code, user experience, and educational value.
+          </p>
+        </div>
+
+        <div class="about-card">
+          <h3>📄 License & Usage</h3>
+          <p>
+            This is an educational project. Feel free to use the calculator for learning 
+            purposes, project planning, or research. For production use or large-scale 
+            installations, please consult with certified wind energy professionals.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2024 Wind Energy Estimation Dashboard. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Graphs - Wind Energy Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+</head>
+<body>
+  <header>
+    <nav class="nav-container">
+      <div class="nav-brand">
+        <h1>🌬️ Wind Energy Dashboard</h1>
+      </div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="calculator.html">Calculator</a></li>
+        <li><a href="graphs.html" class="active">Graphs</a></li>
+        <li><a href="info.html">Info</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+      <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme">
+        <span class="theme-icon">🌙</span>
+      </button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="graphs-section">
+      <div class="container">
+        <h2>Wind Energy Visualizations</h2>
+        <p class="subtitle">Interactive charts showing power output and efficiency analysis</p>
+
+        <div class="graphs-grid">
+          <div class="graph-card">
+            <h3>Power vs Wind Speed</h3>
+            <p class="graph-description">
+              Shows how power output increases with wind speed (cubic relationship)
+            </p>
+            <div class="chart-container-large">
+              <canvas id="powerVsSpeedChart"></canvas>
+            </div>
+          </div>
+
+          <div class="graph-card">
+            <h3>Efficiency Analysis</h3>
+            <p class="graph-description">
+              Typical turbine efficiency compared to theoretical Betz limit
+            </p>
+            <div class="chart-container-medium">
+              <canvas id="efficiencyChart"></canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2024 Wind Energy Estimation Dashboard. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
